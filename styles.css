@@ -44,6 +44,7 @@ header{
     padding: 40px 4%;
 }
 header > .interface{
+    background-color: rgba(0, 179, 255, 0.7);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +52,6 @@ header > .interface{
 }
 
 .logo {
-    height: 60px; 
     display: flex; 
     align-items: center;
 }
@@ -60,18 +60,18 @@ header > .interface{
     height: 65px; 
     border-radius: 50%; 
     object-fit: cover; 
-   border: 2px solid #c0f; 
-}
+   }
 
 header a{
-    color: #978f8f;
+    color: #fff;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
+    border-radius: 5px;
 }
 
 header nav.menu-desktop a:hover{
-    color: #fff;
+    background-color: rgba(0, 255, 255, 0.316);
     transform: scale(1.07);
 }
 
@@ -87,11 +87,12 @@ header nav.menu-desktop ul li{
 .btn-abrir-menu i{
     color: aqua;
     font-size: 40px;
+    cursor: pointer;
 }
 
 .menu-mobile{
     background-color: rgba(0, 179, 255, 0.7);
-    height: 70vh;
+    height: 60vh;
     position: fixed;
     top: 0;
     right: 0;
@@ -99,10 +100,11 @@ header nav.menu-desktop ul li{
     width: 0%;
     overflow: hidden;
     transition: .5s;
+    cursor: pointer;
 }
 .menu-mobile.abrir-menu{
-    width: 50%;
-  
+    width: 30%;
+    height: 65vh;
 }
 
 .menu-mobile.abrir-menu ~ .overlay-menu{
@@ -128,7 +130,7 @@ header nav.menu-desktop ul li{
    text-decoration: none;
 }
 .menu-mobile nav ul li a:hover{
-    background-color: #c0f;
+    background-color: aqua;
     color: #000;
 }
 
@@ -159,12 +161,25 @@ section.topo-do-site .flex{
     font-size: 42px;
     line-height: 40px;
 }
-.topo-do-site .text-topo-site h1 span{
-    color: aqua;
+
+
+/* estilizacao para o texto em movimento */
+#text-topo-dinamic{
+    color: aqua;    
+    border-right: 3px solid aqua; 
+    padding-right: 5px;
+    animation: piscarCursor 0.3s infinite;
 }
+
+@keyframes piscarCursor {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: aqua; }
+}
+
 .topo-do-site .text-topo-site p{
     color: #fff;
     margin: 40px 0;
+    padding: 5px;
 
 }
 
@@ -365,9 +380,22 @@ footer .line-footer p a{
     color: #fff;
 
 }
+.borda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
 .p-footer{
     color: #fff;
     text-align: center;
+}
+
+
+@media screen and (min-width: 1021px) {
+    .btn-abrir-menu {
+        display: none !important; 
+    }
+
 }
 
 @media screen and (max-width: 1020px) {
@@ -446,5 +474,12 @@ footer .line-footer p a{
     footer .line-footer .logo {
         margin: 0 auto;
     }
+
+    .borda{
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;    
+    }
+
 }
      
